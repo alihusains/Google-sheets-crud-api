@@ -17,31 +17,22 @@ curl --location --request GET 'https://script.google.com/macros/s/<YOUR_SCRIPT_I
 curl --location --request POST 'https://script.google.com/macros/s/<YOUR_SCRIPT_ID_HERE>/exec?action=create' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-	"sheet": "<YOUR_SHEET_NAME_HERE>",
-  "column1":"value1",
-  "column2":"value2"
+	"sheet": "<YOUR_SHEET_NAME_HERE>", "column1":"value1","column2":"value2"}'
 <!--   add as many columns as you want || Data will only be filled if your sheet has the columns that are mentioned -->
-	}'
+	
   
   # POST API (UPDATE / MODIFY ROW ) || Required : Sheetname, id of the row
 
 curl --location --request POST 'https://script.google.com/macros/s/<YOUR_SCRIPT_ID_HERE>/exec?action=update' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-	"sheet": "<YOUR_SHEET_NAME_HERE>",
-  "id":"2"
-  "column1":"value1",
-  "column2":"value2"
-	}'
+	"sheet": "<YOUR_SHEET_NAME_HERE>", "id":"2" "column1":"value1", "column2":"value2"}'
   
    # POST API (DELETE ROW ) || Required : Sheetname, id of the row to be deleted
 
 curl --location --request POST 'https://script.google.com/macros/s/<YOUR_SCRIPT_ID_HERE>/exec?action=delete' \
 --header 'Content-Type: application/json' \
---data-raw '{
-	"sheet": "<YOUR_SHEET_NAME_HERE>",
-  "id":"2"
-	}'
+--data-raw '{"sheet": "<YOUR_SHEET_NAME_HERE>", "id":"2"}'
   
   
   
